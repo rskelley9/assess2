@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Welcome to Event Planner</h1>
+  <p>Please Login Below</p>
+
+  <div id="index">
+
+    <form id="login" ACTION="/login" METHOD="POST">
+      <label for="email">Email</label><input type="text" name="email" placeholder-"please enter your email"></input>
+
+      <label for="password">Password</label><input type="password" name="password" placeholder-"please enter your password"></input>
+      <input type="submit" value="Login In">
+    </form>
+
+  </div>
+
+    <% unless @error.nil? %>
+  <div><%= @error %></div>
+
+<% end %>
+
+  <p style="text-align:center;font-size: 10px;color:blue;"><u>Don't Have an Account Yet?</u></p>
+  <a href="/signup"><b>Sign Up Here!</b></a>
+
+</div>
+
+<div>Upcoming Events</div>
+
+<ul>
+<% @all_events.each do |event| %>
+<li><a href="/attend/<%= event.id %>"><%= event.name %> on <%= event.starts_at %></a></li>
+
+<%end %>
+</ul>

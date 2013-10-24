@@ -1,0 +1,11 @@
+<h3><%= @user.first_name %>,Create a new event below</h3>
+
+<form id="event" action="/create/event/<%= @user.id %>" method="POST">
+ (Event's) Name: <input id="name" type="text" name="name">
+  Location: <input id="location" type="text" name="location">
+  Start Time: <input id="starts_at" type="datetime" name="starts_at">
+  End Time: <input id="ends_at" type="datetime" name="ends_at">
+  <input id="new_event" type="submit" value="CREATE EVENT!">
+</form>
+
+<a href="/">Home</a>

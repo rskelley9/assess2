@@ -1,0 +1,15 @@
+<h3><%= @user.first_name %>Update or Delete This Event</h3>
+
+<form id="create_event" action="/update/event/<%= @event.id %>/user/<%= @user.id %>" method="POST">
+ (Event's) Name: <input id="name" type="text" name="name">
+  Location: <input id="location" type="text" name="location">
+  Start Time: <input id="starts_at" type="datetime" name="starts_at">
+  End Time: <input id="ends_at" type="datetime" name="ends_at">
+  <input type="submit" value="Update EVENT!">
+</form>
+
+<a href="/delete/<%=@event.id%>/<%= @user.id%>"><font style="color:red;">Delete This Event</font></a>
+
+<a href="/delete-all/<%=@event.id%>/<%= @user.id%>"><font style="color:red;">Delete All of Your Events</font></a>
+
+<a href="/">Home</a>

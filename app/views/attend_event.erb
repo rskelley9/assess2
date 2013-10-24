@@ -1,0 +1,11 @@
+<h1><%= @event.name %><h1>
+
+
+  <h2>Please Enter Your Name to Commit to Attending This Event</h2>
+
+    <form id="attend_event" ACTION="/users/#{@user.id}/attend" METHOD="POST">
+      <label for="email">Email</label><input type="text" name="email" placeholder-"please enter your email"></input>
+
+      <label for="password">Password</label><input type="password" name="password" placeholder-"please enter your password"></input>
+      <input type="submit" value="Login In">
+    </form>

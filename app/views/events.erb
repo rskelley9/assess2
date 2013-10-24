@@ -1,0 +1,46 @@
+<div class="container">
+<h1>Welcome Back, <%= @user.first_name%></h1>
+
+<p>Your Created Events are Listed Below</p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Starts At</th>
+    <th>Ends At</th>
+  </tr>
+
+  <% @created_events.each do |event|%>
+  <tr><td><a href="/events/<%=event.id%>"><%= event.name %></td><td><%= event.location %></td><td><%=event.starts_at%></td><%=event.ends_at%><td></td></tr>
+</table>
+<% end %>
+
+<br>
+<br>
+
+<a id="user" href="/create/event/<%= @user.id %>"><b>Create New Event</b></a>
+
+<br>
+<br>
+
+<div id="add_form">
+  <form id="create">
+    <input id="create_new" type="submit" value="show">
+  </form>
+
+  <!-- <a id="create_new2" href="#add_form">Create New2</a> -->
+</div>
+
+<p>Events You've Committed to Attend are Listed Below</p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Starts At</th>
+    <th>Ends At</th>
+  </tr>
+  <% @attended_events.each do |event|%>
+  <tr><td><a href="/events/<%=event.id%>"><%= event.name %></td><td><%= event.location %></td><td><%=event.starts_at%></td><%=event.ends_at%><td></td></tr>
+</table>
+<% end %>
+</div>
